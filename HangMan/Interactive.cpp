@@ -14,7 +14,7 @@ void UpdateCurrentStatus(char wordStatus[], GameData* Game)
 	int check = 0;
 	while (*ptr != '\0') {
 		if ((*ptr == letter || *ptr == (letter ^ 32) || isMatch(letter, *ptr))
-			&& Game->Checked[ptr - Game->WordToGuess] == 0) {//перевірка чи загадане слово містить введену букву
+			&& Game->Checked[ptr - Game->WordToGuess] == 0) {
 			Game->Checked[ptr - Game->WordToGuess] = 1;
 			wordStatus[ptr - Game->WordToGuess] = letter;
 			check += 1;

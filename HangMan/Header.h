@@ -13,21 +13,21 @@ typedef struct PlayStatistics{
 
 typedef struct {
 	int LivesRemaining;
-	int Checked[16];
+	int Checked[WLEN];
 	int SuccesGuessed;
-	char WordToGuess[16];
+	char WordToGuess[WLEN];
 } GameData;
 
-void ShowGeneralData(int);
+void ShowGeneralData(int); // int - words cnt
 int GamesComparer(PlayStats*, PlayStats*);
 void WelcomeUser(GameData*);
 void ChooseWordToGuess(GameData*);
-void ShowHangman(int);
-void PrintCurrentStatus(char[], GameData*);
+void ShowHangman(int);//int - lives remaining
+void PrintCurrentStatus(char[], GameData*); // char[] - word status
 void UpdateCurrentStatus(char[], GameData*);
 void SetLevel(GameData*);
-void decrypt(char*, char*);
-int isMatch(int, int);
+void decrypt(char*, char*); // 1 - key, 2 - word
+int isMatch(int, int); // 1-input letter, 2-letter from guessed word
 clock_t SetZero(void);
 int SuccesfulGames(GameData*);
 #endif
